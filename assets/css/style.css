@@ -5,3 +5,47 @@
 	box-sizing: border-box;
 }
 /* /common_general_rules */
+
+/* utility */
+.activeThumb {
+	border: 6px solid black;
+	filter: brightness(1) !important;
+}
+/* /utility */
+
+/* #container */
+#container {
+	width: 1140px;
+	margin: 2rem auto;
+	display: flex;
+	height: 400px;
+}
+
+/* .preview */
+.preview {
+	display: none;
+	width: 80%;
+}
+/* /.preview */
+
+/* .thumbs */
+.thumbs {
+	width: 20%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.image_thumbs {
+	max-width: 100%;
+	height: calc(100% / 5);
+	object-fit: cover;
+	filter: brightness(0.5);
+	margin: 0.1rem 0;
+}
+
+.image_thumbs img {
+	width: 100%;
+}
+/* /.thumbs */
+/* /#container */
