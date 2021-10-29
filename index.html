@@ -8,7 +8,23 @@
 		<title>Vue Slider</title>
 	</head>
 	<body>
-		<div id="app"></div>
+		<div id="app">
+			<div id="container">
+				<div class="preview">
+					<img :src="slides[counter].image" alt="" />
+					<div class="text">
+						<h2>{{slides[counter].title}}</h2>
+						<p>{{slides[counter].text}}</p>
+					</div>
+				</div>
+				<div class="thumbs">
+					<nav class="navigator"></nav>
+					<div v-for="(slide, index) in slides" class="image_thumbs">
+						<img v-bind:src="slide.image" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- script_vuejs_javascript -->
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 		<script src="./assets/js/main.js"></script>
