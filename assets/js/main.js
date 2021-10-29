@@ -19,7 +19,7 @@ const root = new Vue({
 			{
 				image: "img/02.jpg",
 				title: "Svizzera",
-				text: "Lorem ipsum",
+				text: "Lorem ipsum.",
 			},
 			{
 				image: "img/03.jpg",
@@ -29,13 +29,25 @@ const root = new Vue({
 			{
 				image: "img/04.jpg",
 				title: "Germania",
-				text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,",
+				text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam.",
 			},
 			{
 				image: "img/05.jpg",
 				title: "Paradise",
-				text: "Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,",
+				text: "Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam.",
 			},
 		],
+		methods: {
+			slideUp: function () {
+				if (this.counter < this.slides.length - 1) {
+					++this.counter;
+				}
+			},
+			slideDown: function () {
+				if (this.counter > 0) {
+					--this.counter;
+				}
+			},
+		},
 	},
 });
