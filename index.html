@@ -4,11 +4,20 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+			integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 		<link rel="stylesheet" href="./assets/css/style.css" />
 		<title>Vue Slider</title>
 	</head>
 	<body>
+		<!-- #app_vuejs -->
 		<div id="app">
+			<!-- #container -->
 			<div id="container">
 				<div class="preview">
 					<img :src="slides[counter].image" alt="" />
@@ -17,17 +26,45 @@
 						<p>{{slides[counter].text}}</p>
 					</div>
 				</div>
+
+				<!-- .thumbs -->
 				<div class="thumbs">
-					<nav class="navigator"></nav>
-					<div v-for="(slide, index) in slides" class="image_thumbs">
-						<img v-bind:src="slide.image" alt="" />
+					<!-- .navigator -->
+					<nav class="navigator">
+						<button @click="slideUp" class="prev">
+							<i class="fas fa-chevron-up"></i>
+						</button>
+						<button @click="slideDown" class="next">
+							<i class="fas fa-chevron-down"></i>
+						</button>
+					</nav>
+					<!-- /.navigator -->
+
+					<!-- .thumbsImage -->
+					<div class="thumbsImage">
+						<div
+							v-if="counter != index"
+							v-for="(slide, index) in slides"
+							class="imageThumbs"
+						>
+							<img v-bind:src="slide.image" alt="cinque immagini" />
+						</div>
+						<div v-else="activeThumb" class="imageThumbs">
+							<img v-bind:src="slide.image" alt="immagine scelta" />
+						</div>
 					</div>
+					<!-- /.thumbsImage -->
 				</div>
+				<!-- /.thumbs -->
 			</div>
+			<!-- /#container -->
 		</div>
+		<!-- /#app_vuejs -->
+
 		<!-- script_vuejs_javascript -->
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 		<script src="./assets/js/main.js"></script>
 		<!-- /script_vuejs_javascript -->
 	</body>
 </html>
+
